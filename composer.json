@@ -17,7 +17,7 @@
       },
     "autoload": {
         "psr-4": {
-            "Sition\\Shopware6\\Apiv1\\": "src/"
+            "Sition\\Shopware6\\": "src/"
         }
     }
 }
