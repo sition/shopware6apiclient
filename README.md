@@ -5,9 +5,9 @@
 
 require_once __DIR__ . '/vendor/autoload.php'; 
 
-use Sition\Shopware6\Apiv1;
+use Sition\Shopware6\ShopwareClient;
 
-$test = RestClient( 'http://www.shopwaredemo.nl', 'CLIENT_ID', 'CLIENT_SECRET' );
+$test = ShopwareClient( 'http://www.shopwaredemo.nl', 'CLIENT_ID', 'CLIENT_SECRET' );
 
 $response = $test->request( 'GET', 'product?filter[product.active]=1&filter[product.productNumber]=SWDEMO10007'); 
 
