@@ -1,12 +1,12 @@
 <?php 
 //declare(strict_types=1);
-namespace Sition\Shopware6\Apiv1;
+namespace Sition\Shopware6;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class RestClient
+class ShopwareClient
 {
    /**
      * @var Client
