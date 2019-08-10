@@ -83,7 +83,7 @@ class ShopwareClient
     {
         return new Request(
             $method,
-           APP_URL . '/api/v1/' . $uri,
+          $this->baseUrl . '/api/v1/' . $uri,
             [
                 'Authorization' => 'Bearer ' . $this->accessToken,
                 'Accept' => '*/*'
@@ -104,7 +104,7 @@ class ShopwareClient
         ]);
         $request = new Request(
             'POST',
-            APP_URL. '/api/oauth/token',
+           $this->baseUrl . '/api/oauth/token',
             ['Content-Type' => 'application/json'],
             $body
         );
