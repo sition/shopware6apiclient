@@ -1,0 +1,23 @@
+{
+    "name": "sition/shopware6-api-v1",
+    "description": "Shopware 6 Base Rest API v1",
+    "type": "library",
+    "keywords": ["shopware 6",  "api", "rest"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michel Doens",
+            "email": "michel.doens@sition.nl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "guzzlehttp/guzzle": "^6.3"
+      },
+    "autoload": {
+        "psr-4": {
+            "Sition\\Shopware6\\Apiv1\\": "src/"
+        }
+    }
+}
