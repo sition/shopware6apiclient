@@ -1,3 +1,10 @@
+
+# description of API endpoints for shopware 6
+
+http://www.shopwaredemo.nl/api/v1/_info/swagger.html
+
+
+
 # shopware6apiclient
 
 
@@ -14,4 +21,7 @@ $response = $test->request( 'GET', 'product?filter[product.active]=1&filter[prod
 $body = json_decode($response->getBody()->getContents(), true);
 
 var_dump($body);
+
+
+
 
