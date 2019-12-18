@@ -86,7 +86,8 @@ class ShopwareClient
           $this->baseUrl . '/api/v1/' . $uri,
             [
                 'Authorization' => 'Bearer ' . $this->accessToken,
-                'Accept' => '*/*'
+                'Accept' => '*/*',
+                'Content-Type' => 'application/json'
             ],
             $body
         );
