@@ -30,7 +30,9 @@ var_dump($body);
 
 
 $body = array(  "name" => "test cat" );
+
 $response = $test->request('POST','category',$body);
+
 $body = json_decode($response->getBody()->getContents(), true);
 
 
