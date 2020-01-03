@@ -35,4 +35,115 @@ $response = $test->request('POST','category',$body);
 
 $body = json_decode($response->getBody()->getContents(), true);
 
+# get complete order including all details
+
+$jayParsedAry = [
+    "total-count-mode" => 0,
+   // "ids" => "640ae70d50704641af16592613aacc21",  // specifieke id.
+    "page" => 1,
+    "limit" => 25,
+    "filter" => [
+        [
+            "type" => "equals",
+            "field" => "stateId",
+            "value" => "4c22d7bf1bcd40f1b74385fb28420056" // open orders
+        ]
+    ],
+    "associations" => [
+        "lineItems" => [
+            "associations" => [
+                "product" => [
+                    "associations" => [
+                        "tax" => [
+                        ]
+                    ]
+                ]
+                ]
+        ],
+        "currency" => [
+        ],
+        "orderCustomer" => [
+        ],
+          "language" => [
+        ],
+        "salesChannel" => [
+        ],
+        "addresses" => [
+            "associations" => [
+                "country" => [
+                ],
+                "countryState" => [
+                ],
+                "salutation" => [
+                ]
+            ]
+        ],
+        "deliveries" => [
+            "associations" => [
+                "shippingMethod" => [
+                ],
+                "shippingOrderAddress" => [
+                    "associations" => [
+                        "country" => [
+                        ],
+                        "countryState" => [
+                        ],
+                        "salutation" => [
+                        ]
+                    ],
+                ]
+            ]
+        ],
+        "transactions" => [
+            "associations" => [
+                "paymentMethod" => [
+                ]
+            ]
+        ],
+        "documents" => [
+            "associations" => [
+                "documentType" => [
+                ]
+            ]
+        ],
+        "tags" => [
+        ]
+
+    ]
+    ,
+    "aggregations" => [
+//        [
+//            "name" => "currency",
+//            "type" => "entity",
+//            "definition" => "currency",
+//            "field" => "currencyId"
+//        ],
+//        [
+//            "name" => "language",
+//            "type" => "entity",
+//            "definition" => "language",
+//            "field" => "languageId"
+//        ],
+
+        [
+            "name" => "BillingAddress",
+            "type" => "entity",
+            "definition" => "order_address",
+            "field" => "billingAddressId",
+            // opmerking: CountrId is al opgehaald in Adresses array, evenals stateid en salutation.
+
+        ],
+
+
+
+    ]
+
+
+];
+
+
+
+$response = $test->request( 'POST', 'search/order', $jayParsedAry);
+$body = json_decode($response->getBody()->getContents(), true);
+
 
