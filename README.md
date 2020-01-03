@@ -42,6 +42,7 @@ $body = json_decode($response->getBody()->getContents(), true);
 ```php
 $jayParsedAry = [
     "total-count-mode" => 0,
+    // "ids" => "640ae70d50704641af16592613aacc21",  // specifieke id.
     "page" => 1,
     "limit" => 25,
     "filter" => [
