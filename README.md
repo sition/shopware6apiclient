@@ -37,6 +37,7 @@ $body = json_decode($response->getBody()->getContents(), true);
 
 # get complete order including all details
 
+```php
 $jayParsedAry = [
     "total-count-mode" => 0,
     "page" => 1,
@@ -121,7 +122,7 @@ $jayParsedAry = [
     ]
 
 ];
-
+```
 
 
 $response = $test->request( 'POST', 'search/order', $jayParsedAry);
