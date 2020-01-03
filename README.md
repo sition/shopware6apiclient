@@ -109,21 +109,8 @@ $jayParsedAry = [
         "tags" => [
         ]
 
-    ]
-    ,
+    ],
     "aggregations" => [
-//        [
-//            "name" => "currency",
-//            "type" => "entity",
-//            "definition" => "currency",
-//            "field" => "currencyId"
-//        ],
-//        [
-//            "name" => "language",
-//            "type" => "entity",
-//            "definition" => "language",
-//            "field" => "languageId"
-//        ],
 
         [
             "name" => "BillingAddress",
@@ -134,10 +121,7 @@ $jayParsedAry = [
 
         ],
 
-
-
     ]
-
 
 ];
 
